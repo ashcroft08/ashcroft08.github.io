@@ -91,38 +91,30 @@ body{
 }
 
 .container .uniforms-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 50px;
-    padding: 45px 0px
+    font-size: 56px;
+    color: #444;
+    margin-bottom: 48px;
+    gap: 32px
 }
 
 .container .uniforms-container .uniform {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    padding: 48px 32px;
+    background: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+    outline: 1.6px solid #ccc;
+    outline-offset: -24px;
+    cursor: pointer;
 }
 
-.container .uniforms-container .uniform a {
-    display: inline-block;
-    text-decoration: none;
-    width: 45px;
-    line-height: 45px;
-    color: white;
-    margin-right: 10px;
-    background-color: #0d2033;
-    text-align: center;
-    transition: all 0.03s ease;
+.container .uniforms-container .uniform:hover {
+    outline: 3.2px solid #ccc;
+    outline-offset: 0;
 }
 
 .container .uniforms-container .uniform img {
-    height: 300px;
-    width: 400px;
+    height: 500px;
+    width: 700px;
 }
 /*Pie de Pagina*/
 
