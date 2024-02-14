@@ -1,26 +1,31 @@
-document.getElementById('mostrarCodigo').addEventListener('click', function() {
-    var codigoHTML = `
-        <div class="container">
-            <div class="flower">
-                <div class="leaf leaf-0"></div>
-                <div class="leaf leaf-1"></div>
-                <div class="leaf leaf-2"></div>
-                <div class="leaf leaf-3"></div>
-                <div class="leaf leaf-4"></div>
-                <div class="leaf leaf-5"></div>
-                <div class="leaf leaf-6"></div>
-                <div class="leaf leaf-7"></div>
-                <div class="leaf leaf-8"></div>
-                <div class="leaf leaf-9"></div>
-                <div class="leaf leaf-10"></div>
-                <div class="leaf leaf-11"></div>
-                <div class="leaf leaf-12"></div>
-                <div class="leaf leaf-13"></div>
-                <div class="leaf leaf-14"></div>
-                <div class="leaf leaf-15"></div>
-                <div class="dot"></div>
-            </div>
-        </div>
-    `;
-    document.getElementById('codigoContainer').innerHTML = codigoHTML;
+$(document).ready(function () {
+
+
+    $('.valentines-day').click(function () {
+        // AnimaciÃ³n de desvanecimiento de los elementos del sobre
+        $('.envelope').css({ 'animation': 'fall 3s linear 1', '-webkit-animation': 'fall 3s linear 1' });
+        $('.envelope').fadeOut(800, function () {
+            // Ocultar elementos dentro de .valentines-day
+            $('.valentines-day .heart, .valentines-day .text, .valentines-day .front').hide();
+
+            // Hacer visible la carta con una animaciÃ³n ondulante
+            $('#card').css({ 'visibility': 'visible', 'opacity': 0, 'transform': 'scale(0.1)' });
+            $('#card').animate({ 'opacity': 1 }, {
+                duration: 1000, step: function (now, fx) {
+                    var scale = 1 + Math.sin(now * Math.PI) * 0.1; // Calculamos la escala basada en la funciÃ³n seno
+                    $(this).css('transform', 'scale(' + scale + ')');
+                }
+            }); // AnimaciÃ³n de ondulaciÃ³n
+        });
+    });
 });
+
+(function (w, d, e, u, f, l, n) {
+    w[f] = w[f] || function () {
+        (w[f].q = w[f].q || [])
+        .push(arguments);
+    }, l = d.createElement(e), l.async = 1, l.src = u,
+    n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
+})
+    (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+ml('account', '736768');
